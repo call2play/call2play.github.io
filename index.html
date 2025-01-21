@@ -3,13 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ElevenLabs Widgets</title>
+    <title>Combined Widgets</title>
+    <style>
+        /* Basic reset for margins and padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Ensure body and html take up full height */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Grid container for 3x2 layout */
+        .widget-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 equal-width columns */
+            grid-gap: 20px; /* Space between the widgets */
+            padding: 20px;
+            justify-items: center; /* Center the widgets horizontally */
+            align-items: start; /* Align widgets to the top of the grid cells */
+            max-width: 100%;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Make iframe responsive and fit its container */
+        iframe {
+            width: 100%;
+            max-width: 300px;
+            min-width: 250px;
+            height: 500px; /* Adjust as per widget height */
+            border: none;
+        }
+
+        /* Add responsiveness for smaller screens */
+        @media (max-width: 768px) {
+            .widget-container {
+                grid-template-columns: repeat(2, 1fr); /* 2 columns on small screens */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .widget-container {
+                grid-template-columns: 1fr; /* 1 column on very small screens */
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Widget 1 -->
-    <elevenlabs-convai agent-id="IKEw3PElUD4PfpxNaX3G"></elevenlabs-convai>    
+    <div class="widget-container">
+        <!-- Widget 1 -->
+        <iframe src="widget1.html"></iframe>
 
-    <script src="https://elevenlabs.io/convai-widget/index.js" async type="text/javascript"></script>
+        <!-- Widget 2 -->
+        <iframe src="widget2.html"></iframe>
+
+        <!-- Widget 3 -->
+        <iframe src="widget3.html"></iframe>
+
+        <!-- Widget 4 -->
+        <iframe src="widget4.html"></iframe>
+
+        <!-- Widget 5 -->
+        <iframe src="widget5.html"></iframe>
+
+        <!-- Widget 6 -->
+        <iframe src="widget6.html"></iframe>
+    </div>
 </body>
 </html>
-
